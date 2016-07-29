@@ -7,4 +7,4 @@ The develop branch has been set as the default.
 both maste & develop have been protected.
 
 Travis
-Now with ever push / merge into develop a travis build is fired
+Now with every push / merge into develop a travis build is fired

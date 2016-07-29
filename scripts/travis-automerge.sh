@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
-if [ "$TRAVIS_BRANCH" != "test" ]; then 
+if [ "$TRAVIS_BRANCH" != "test" ]; then
+    printf 'bailing early';
     exit 0;
 fi
 
@@ -20,10 +21,10 @@ git clone "https://github.com/$GITHUB_REPO" "$repo_temp"
 cd "$repo_temp"
 
 printf 'Checking out %s\n' "$BRANCH_TO_MERGE_INTO" >&2
-git checkout "$BRANCH_TO_MERGE_INTO" || exit
+git checkout "$BRANCH_TO_MERGE_INTO"
 
 printf 'Merging %s\n' "$TRAVIS_COMMIT" >&2
-git merge --ff-only "$TRAVIS_COMMIT" || exit
+git merge --ff-only "$TRAVIS_COMMIT"
 
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
 
