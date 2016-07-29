@@ -5,3 +5,6 @@ Repos set-up
 The master branch has been forked to develop.
 The develop branch has been set as the default.
 both maste & develop have been protected.
+
+Travis
+Now with ever push / merge into develop a travis build is fired
