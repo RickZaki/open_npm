@@ -1,0 +1,1 @@
+modue.exports = 'hello world';
