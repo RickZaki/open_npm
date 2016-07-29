@@ -5,6 +5,9 @@
   "description": "an example module",
   "license": "CC-BY-4.0",
   "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/_mocha test/**/*.js"
+  },
   "homepage": "https://github.com/RickZaki/open_npm",
   "bugs": {
     "url": "https://github.com/RickZaki/open_npm/issues"
@@ -12,5 +15,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/RickZaki/open_npm.git"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
   }
 }
