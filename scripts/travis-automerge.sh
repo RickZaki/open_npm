@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
-if [ "$TRAVIS_BRANCH" != "test" ]; then
-    printf 'bailing early: %s\n' "$TRAVIS_BRANCH";
+if [ "$TRAVIS_BRANCH" != "develop" ]; then
+    printf 'bailing early since not %s\n' "$TRAVIS_BRANCH";
     exit 0;
 fi
 
