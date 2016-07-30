@@ -35,5 +35,10 @@ printf 'Merging %s\n' "$TRAVIS_BRANCH" >&2
 git merge develop --no-commit
 git commit -m "Merging develop into master"
 
+VERSION=`node -e "console.log('v' + require('./package.json').version);"`
+printf 'Tagging %s\n' "$VERSION" >&2
+git tag -a $VERSION -m "tagging for release $VERSION"
+
+
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
-git push "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
+git push  --tags "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
