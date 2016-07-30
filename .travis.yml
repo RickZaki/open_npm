@@ -18,4 +18,3 @@ deploy:
   on:
     branch: master
     repo: RickZaki/open_npm
-    tags: true
