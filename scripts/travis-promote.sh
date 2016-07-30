@@ -38,6 +38,8 @@ git checkout "$BRANCH_TO_MERGE_FROM"
 
 printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_INTO" "$BRANCH_TO_MERGE_FROM" >&2
 git merge --squash "$BRANCH_TO_MERGE_INTO"
+npm --no-git-tag-version prerelease
+git add package.json
 git commit -m 'Keeping branches in sync [ci skip]'
 
 printf 'Pushing to %s\n' "$BRANCH_TO_MERGE_FROM" >&2

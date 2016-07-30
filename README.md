@@ -4,7 +4,10 @@ An example repos displaying a typical open source workflow for node projects dis
 Repos set-up
 The master branch has been forked to develop.
 The develop branch has been set as the default.
-both maste & develop have been protected.
+Both master & develop have been protected.
+Pull Request should be opened against develop, and master should represent the most current release.
 
 Travis
-Now with every push / merge into develop a travis build is fired
+With every push a travis build is fired.
+The promote script is configured to exit if not in develop branch.
+Travis will deploy the final package to npmjs.
