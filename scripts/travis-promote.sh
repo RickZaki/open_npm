@@ -25,7 +25,7 @@ printf 'Checking out %s\n' "$BRANCH_TO_MERGE_INTO" >&2
 git checkout "$BRANCH_TO_MERGE_INTO"
 
 printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_FROM" "$BRANCH_TO_MERGE_INTO" >&2
-git merge "$BRANCH_TO_MERGE_FROM"
+git merge "$BRANCH_TO_MERGE_FROM" -X theirs
 
 printf 'Bumping package version\n' >&2
 npm version patch
