@@ -30,13 +30,13 @@ git merge "$BRANCH_TO_MERGE_FROM"
 printf 'Bumping package version\n' >&2
 npm version patch
 
-printf 'Pushing to %s\n' "$TRAVIS_BRANCH" >&2
+printf 'Pushing to %s\n' "$BRANCH_TO_MERGE_INTO" >&2
 git push --tags "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
 
 printf 'Checking out %s\n' "$BRANCH_TO_MERGE_FROM" >&2
 git checkout "$BRANCH_TO_MERGE_FROM"
 
 printf 'Merging %s\n' "$BRANCH_TO_MERGE_INTO" >&2
-git merge "$BRANCH_TO_MERGE_INTO"  --no-commit
+git merge "$BRANCH_TO_MERGE_INTO" --no-commit
 git commit -m 'Keeping develop in sync with master [ci skip]'
 git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >/dev/null 2>&1
