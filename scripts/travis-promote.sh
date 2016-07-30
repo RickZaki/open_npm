@@ -32,7 +32,7 @@ printf 'Checking out %s\n' "$BRANCH_TO_MERGE_INTO" >&2
 git checkout "$BRANCH_TO_MERGE_INTO"
 
 printf 'Merging %s\n' "$TRAVIS_BRANCH" >&2
-git merge --ff-only --no-commit "$TRAVIS_BRANCH"
+git merge develop --no-commit
 git commit -m "Merging develop into master"
 
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
