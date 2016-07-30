@@ -11,4 +11,3 @@ Travis
 With every push a travis build is fired.
 The promote script is configured to exit if not in develop branch.
 Travis will deploy the final package to npmjs.
-
