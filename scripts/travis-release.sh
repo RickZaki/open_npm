@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 if [ "$TRAVIS_BRANCH" != "master" ]; then
-    printf 'bailing early since not %s\n' "$TRAVIS_BRANCH"
+    printf 'bailing early since not master\n'
     exit 0
 fi
 
@@ -21,7 +21,7 @@ cd "$repo_temp"
 
 VERSION=`node -e "console.log('v' + require('./package.json').version);"`
 printf 'Tagging %s\n' "$VERSION" >&2
-git -a $VERSION -m "tagging for release $VERSION"
+git tag -a $VERSION -m "tagging for release $VERSION"
 
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
 
