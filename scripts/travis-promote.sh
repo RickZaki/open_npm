@@ -37,6 +37,6 @@ printf 'Checking out %s\n' "$BRANCH_TO_MERGE_FROM" >&2
 git checkout "$BRANCH_TO_MERGE_FROM"
 
 printf 'Merging %s\n' "$BRANCH_TO_MERGE_INTO" >&2
-git merge "$BRANCH_TO_MERGE_INTO" --no-commit
-git commit -m 'Keeping develop in sync with master [ci skip]'
+git merge --no-commit "$BRANCH_TO_MERGE_INTO"
+git commit -m 'Keeping branches in sync [ci skip]'
 git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >/dev/null 2>&1
