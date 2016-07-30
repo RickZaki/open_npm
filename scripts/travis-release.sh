@@ -9,6 +9,7 @@ fi
 GITHUB_REPO="RickZaki/open_npm.git"
 export GIT_COMMITTER_EMAIL='travis@RickZaki.com'
 export GIT_COMMITTER_NAME='Travis CI'
+push_uri="https://$GITHUB_SECRET_TOKEN@github.com/$GITHUB_REPO"
 
 
 
@@ -24,8 +25,4 @@ printf 'Tagging %s\n' "$VERSION" >&2
 git tag -a $VERSION -m "tagging for release $VERSION"
 
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
-
-push_uri="https://$GITHUB_SECRET_TOKEN@github.com/$GITHUB_REPO"
-
-# Redirect to /dev/null to avoid secret leakage
 git push --tags "$push_uri" >/dev/null 2>&1
