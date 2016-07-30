@@ -25,7 +25,6 @@ git checkout "$BRANCH_TO_MERGE_INTO"
 
 printf 'Merging %s\n' "$TRAVIS_COMMIT" >&2
 git merge --ff-only "$TRAVIS_COMMIT"
-# npm version patch -m "updating version"x
 
 printf 'Pushing to %s\n' "$GITHUB_REPO" >&2
 
