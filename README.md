@@ -8,4 +8,3 @@ both maste & develop have been protected.
 
 Travis
 Now with every push / merge into develop a travis build is fired
-
