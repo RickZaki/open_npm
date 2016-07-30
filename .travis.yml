@@ -17,5 +17,6 @@ deploy:
   api_key:
     secure: fJxlUDYF2kqzymiZODCbF6IaXzFdAFGxW3mY5ytQoFWUf4it6xlSDB0oY+tPmvX/hAQzlwTn6EQNoWkpVdRMzKbEnSneW/3PI2oeEVg1Mc/L6flWM/1wJrft9nL4SNAwnoY3n9bQZaGXfRCStOqLdazTtOApe8QqkBIJj8c7pSosouokEo82PIVyV5M1xDyRXKaMpAcinDNSYylk4bsjlSPSq5f81O4O+F+sEKdchToa0NGc65sMsu6eRXHD3VyB+fFgSCVaeQ08DXsdbzHr6XG1XTgBfdxv3UW2dZv24Hgx+K3RqjNJ6HJDSvhGt9EB2ZVaNvLZnRVPtNHf4jKTds9fU1pYWOnchQ6dUmKUEJk0ZpTqpbymdz+pvRd6Y6cms1U0nlLXNEaHIxGIISgSJfQVfM50wJQKH2zyi8v9ihmmPi9/ZtDDlzUmeXLLVn5CAQKZmdm6Lq1QXhOzlOESd2yJu9TcpwUmhIj3e3eEj5N6Bzwi8IdZd/y2lM+WDlhRe9ZLME9pvtyYk0wWdUMh+92HUFMVsmYJ0FSu++ZekgYHLkaDeMpydcQOgf8cto1tsi3tY0sVK0NNz8EBvzjxW2cfdlObaSBafHrGDslpoT59jGr4mdRUYTQaxsXnp8jYnttytzuP330ichfk0N2aIYAb+1i1BxHIxzVTVlyDfUU=
   on:
-    tags: true
+    branch: master
     repo: RickZaki/open_npm
+    tags: true
