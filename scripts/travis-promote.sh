@@ -8,8 +8,8 @@ fi
 
 BRANCH_TO_MERGE_INTO="master"
 GITHUB_REPO="RickZaki/open_npm.git"
-export GIT_COMMITTER_EMAIL='travis@RickZaki.com'
-export GIT_COMMITTER_NAME='Travis CI'
+git config --global user.email "travis@RickZaki.com"
+git config --global user.name "Travis CI"
 push_uri="https://$GITHUB_SECRET_TOKEN@github.com/$GITHUB_REPO"
 
 
