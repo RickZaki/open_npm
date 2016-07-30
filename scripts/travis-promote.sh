@@ -20,8 +20,10 @@ git clone "https://github.com/$GITHUB_REPO" "$repo_temp"
 # shellcheck disable=SC2164
 cd "$repo_temp"
 
-printf 'Bumping pacakge version\n' >&2
-npm --no-git-tag-version version patch -m "bumping version for release [ci skip]";
+printf 'Bumping package version\n' >&2
+npm --no-git-tag-version version patch
+git add package.json
+git commit -m "bumping version for release [ci skip]"
 
 printf 'Pushing to %s\n' "$TRAVIS_BRANCH" >&2
 git push "$push_uri" "$TRAVIS_BRANCH" >/dev/null 2>&1
