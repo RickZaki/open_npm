@@ -20,6 +20,8 @@ git clone "https://github.com/$GITHUB_REPO" "$repo_temp"
 # shellcheck disable=SC2164
 cd "$repo_temp"
 
+npm --no-git-tag-version version patch -m "bumping version for release [ci skip]";
+
 printf 'Checking out %s\n' "$BRANCH_TO_MERGE_INTO" >&2
 git checkout "$BRANCH_TO_MERGE_INTO"
 
@@ -32,3 +34,4 @@ push_uri="https://$GITHUB_SECRET_TOKEN@github.com/$GITHUB_REPO"
 
 # Redirect to /dev/null to avoid secret leakage
 git push "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
+git push "$push_uri" :"$TRAVIS_BRANCH" >/dev/null 2>&1
