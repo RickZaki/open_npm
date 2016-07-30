@@ -38,8 +38,8 @@ git checkout "$BRANCH_TO_MERGE_FROM"
 
 printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_INTO" "$BRANCH_TO_MERGE_FROM" >&2
 git status >&2
-git merge --no-commit "$BRANCH_TO_MERGE_INTO"
+git merge --squash "$BRANCH_TO_MERGE_INTO"
 git status >&2
 git commit -m 'Keeping branches in sync [ci skip]'
 git status >&2
-git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >/dev/null 2>&1
+git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >&2
