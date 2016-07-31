@@ -25,7 +25,7 @@ printf 'Checking out %s\n' "$BRANCH_TO_MERGE_INTO" >&2
 git checkout "$BRANCH_TO_MERGE_INTO"
 
 printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_FROM" "$BRANCH_TO_MERGE_INTO" >&2
-git merge "$BRANCH_TO_MERGE_FROM" -X theirs
+git merge "$BRANCH_TO_MERGE_FROM" -X theirs -m 'merging in changes from develop'
 
 printf 'Bumping package version\n' >&2
 npm version patch
@@ -40,6 +40,9 @@ printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_INTO" "$BRANCH_TO_MERGE_FROM" >&
 git merge --squash "$BRANCH_TO_MERGE_INTO"
 git add package.json
 git commit -m 'Keeping branches in sync [ci skip]'
+npm version --no-git-tag-version prerelease
+git add package.json
+git commit -m 'setting prelease version [ci skip]'
 
 printf 'Pushing to %s\n' "$BRANCH_TO_MERGE_FROM" >&2
 git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >/dev/null 2>&1
