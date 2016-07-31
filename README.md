@@ -24,4 +24,3 @@ The script:
   3. pushes the changes to master for Travis to build
   4. merges the changes from master back into develop so develop is the most recent
   5. pushes the changes to back to github
-   
