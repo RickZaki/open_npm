@@ -40,9 +40,6 @@ printf 'Merging %s into %s\n' "$BRANCH_TO_MERGE_INTO" "$BRANCH_TO_MERGE_FROM" >&
 git merge --squash "$BRANCH_TO_MERGE_INTO"
 git add package.json
 git commit -m 'Keeping branches in sync [ci skip]'
-npm version --no-git-tag-version prerelease
-git add package.json
-git commit -m 'prepping package for next build [ci skip]'
 
 printf 'Pushing to %s\n' "$BRANCH_TO_MERGE_FROM" >&2
 git push "$push_uri" "$BRANCH_TO_MERGE_FROM" >/dev/null 2>&1
