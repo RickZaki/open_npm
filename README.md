@@ -22,5 +22,5 @@ The script:
   1. merges the changes from develop into master
   2. updates the package version number
   3. pushes the changes to master for Travis to build
-  4. merges the changes from master back into develop so develop is the most recent
+  4. merges the changes from master back into develop so develop is the most recent and primed fo future development
   5. pushes the changes to back to github
